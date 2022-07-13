@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>gameapp</title>
+</head>
+<body>
+	{% block content %}
+	<header></header>
+	<main>
+		<div class="purpose">
+			{% for purpose in purposes %}
+				<h2>{{purpose.title}}</h2>
+				<h3>{{purpose.end_date}}</h3>
+				<h2>{{purpose.importance}}</h2>
+			{% endfor %}
+		</div>
+		<div class="calendar">
+		</div>
+		<div class="metrics">
+			{% for metric in metrics %}
+				<h2>{{metric.title}}</h2>
+				<h3>{{metric.score}}</h3>
+			{% endfor %}
+		</div>
+	</main>
+	<footer></footer>
+	{% endblock %}
+</body>
+</html>
