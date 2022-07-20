@@ -19,11 +19,13 @@
 		<div class="container">
 			<div class="purpose">
 				{% for purpose in purposes %}
-					<div class="task" id='{{ purpose.id }}' onclick="complete_task(this.id) ">
-						<span>{{purpose.importance}}</span>&nbsp;&nbsp;
-						<span>{{purpose.end_date|date:"d.m.Y"}}</span>&nbsp;&nbsp;
-						<span>{{purpose.title}}</span>
-					</div>
+					<form action="/scores-route" id="scoresFrom" method="POST">
+						<div name="task" style="text-decoration: none;" class="task" id='{{ purpose.id }}' onclick="complete_task(this.id)">
+							<span>{{purpose.importance}}</span>&nbsp;&nbsp;
+							<span>{{purpose.end_date|date:"d.m.Y"}}</span>&nbsp;&nbsp;
+							<span>{{purpose.title}}</span>
+						</div>
+					</form>
 				{% endfor %}
 			</div>
 			<div class="container2">
